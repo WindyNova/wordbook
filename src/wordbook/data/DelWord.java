@@ -4,19 +4,20 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DelWord extends ConnectDatabase {
-    int status;
+    int isOK;
 
     public int delWord(Word word) {
         connectDatabase();
         try {
             String SQL = "delete from word_table where word = ? ";
             PreparedStatement sta = con.prepareStatement(SQL);
-            sta.setString(1, word.getEnglishWord()); //通配符?的值是word.getEnglishWord():
-            status = sta.executeUpdate();
+            //从左向右数第1个通配符?的值是word.getEnglishWord():
+            sta.setString(1, word.getEnglishWord());
+            isOK = sta.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            status = 0;
+            isOK = 0;
         }
-        return status;
+        return isOK;
     }
 }
