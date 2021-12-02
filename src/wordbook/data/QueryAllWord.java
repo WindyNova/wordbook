@@ -28,6 +28,7 @@ public class QueryAllWord extends ConnectDatabase {
             }
             con.close();
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         return word;
     }
