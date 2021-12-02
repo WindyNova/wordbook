@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EnglishBook1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/程序发布/EnglishBook.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
