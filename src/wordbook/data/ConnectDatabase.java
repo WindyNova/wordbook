@@ -1,6 +1,6 @@
 package wordbook.data;
-/**
- * 连接数据库
+/*
+  连接数据库
  */
 
 import java.sql.Connection;
@@ -12,16 +12,14 @@ public class ConnectDatabase {
     public final static String DBUSER = "root";
     public final static String PASSWORD = "12345678";
     Connection con;
-
     public final void connectDatabase() {
         try {
             Class.forName(DBDRIVER);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try { //创建名字是MyEnglishBook的数据库
+        try {
             con = DriverManager.getConnection(DBURL, DBUSER, PASSWORD); //连接数据库代码
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -4,12 +4,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class FirstTimeInitializer {
-
-    Connection con = new ConnectDatabase().con;  //实例化con 从ConnectDatabase传参
-
+public class FirstTimeInitializer extends ConnectDatabase {
     public FirstTimeInitializer() {
-
+        connectDatabase();
         try {
             Statement sta = con.createStatement();
             String SQL = "create table word_table" + "(word varchar(50) primary key,meaning varchar(200))";
