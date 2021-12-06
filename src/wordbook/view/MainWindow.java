@@ -7,18 +7,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
-    final JTabbedPane tabbedPane; //JTabbedPane选项卡集成视图
-    final AddWordTab addWordView; //添加单词
-    final UpdateWordTab updateWordView; //修改单词
-    final DelWordTab delWordView; //删除单词
-    final QuerySingleWordTab queryOneWordView; //单个单词
+    final JTabbedPane tabbedPane; //JTabbedPane选项卡集成视图（选项卡组件）
+    final AddWordTab addWordView; //添加单词页面
+    final UpdateWordTab updateWordView; //修改单词页面
+    final DelWordTab delWordView; //删除单词页面
+    final QuerySingleWordTab queryOneWordView; //单个单词页面
     final QueryAllWordTab queryAllWordView; //所有单词
     final RandomlyQueryTab queryRandomView; //随机单词
 
     public MainWindow() {
-        setBounds(100, 100, 720, 460);
-        setVisible(true);
-        tabbedPane = new JTabbedPane(JTabbedPane.LEFT);//设定选项卡显示在左侧，实例化各个view
+        setBounds(100, 100, 720, 460);  //设置窗口显示位置和窗口大小
+        setVisible(true);   //设置窗口状态：显示
+        tabbedPane = new JTabbedPane(JTabbedPane.LEFT); //设定选项卡显示在左侧，实例化各个view
         tabbedPane.add("添加单词", addWordView = new AddWordTab());
         tabbedPane.add("修改单词", updateWordView = new UpdateWordTab());
         tabbedPane.add("删除单词", delWordView = new DelWordTab());
