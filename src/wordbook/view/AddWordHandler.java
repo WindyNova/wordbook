@@ -29,6 +29,6 @@ public class AddWordHandler implements ActionListener {
     }
 
     public void setView(AddWordTab view) {
-        this.view = view;
+        this.view = view;   //为了能操作view中的数据，将传入的view赋给当前类的成员变量view
     }
 }

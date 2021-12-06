@@ -20,6 +20,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql-connector-java-5.1.39-bin" level="application" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.27" level="application" />
   </component>
 </module>

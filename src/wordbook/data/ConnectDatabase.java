@@ -8,12 +8,12 @@ import java.sql.DriverManager;
 
 public class ConnectDatabase {
     // 设置数据库连接所需的基本参数
-//    public final static String DBDRIVER = "com.mysql.cj.jdbc.Driver";     //Abel
-    public final static String DBDRIVER = "com.mysql.jdbc.Driver";  //Fuzzbear  数据库驱动
+//    public final static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
+    public final static String DBDRIVER = "com.mysql.jdbc.Driver";
     public final static String DBURL = "jdbc:mysql://127.0.0.1:3306/wordbook";      //指定数据库
     public final static String DBUSER = "root";     //数据库用户名
-//    public final static String PASSWORD = "12345678";     //Abel‘s database password
-    public final static String PASSWORD = "root";       //Fuzzbear  数据库密码
+//    public final static String PASSWORD = "12345678";
+    public final static String PASSWORD = "root";
 
     // 定义连接对象
     Connection con;

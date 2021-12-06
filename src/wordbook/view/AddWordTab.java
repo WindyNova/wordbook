@@ -5,7 +5,7 @@ import javax.swing.*;
 public class AddWordTab extends JPanel {
   protected JTextField inputWord;     //输入单词
   protected JTextField inputMeaning;  //输入单词的翻译
- protected JButton submit;           //提交按钮
+  protected JButton submit;           //提交按钮
   protected JTextField hint;
     AddWordHandler handleAddWord;  //负责处理添加单词
 
@@ -50,7 +50,7 @@ public class AddWordTab extends JPanel {
     //注册监听器
     private void registerListener() {
         handleAddWord = new AddWordHandler();   //创建处理器对象：添加
-        handleAddWord.setView(this);
+        handleAddWord.setView(this);        //将当前类传入handleAddWord（数据传递）
         submit.addActionListener(handleAddWord);    //为按钮添加监听器
     }
 }
