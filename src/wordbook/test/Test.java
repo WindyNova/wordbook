@@ -2,6 +2,7 @@ import wordbook.data.*;
 
 public class Test {
     public static void main(String[] args) {
+
         new FirstTimeInitializer();
         Word word = new Word();
         String[][] a = {{"boy", "男孩"}, {"girl", "女孩"},
@@ -28,6 +29,7 @@ public class Test {
         random.setCount(3); //随机抽取3个单词
         result = random.randomQueryWord();
         System.out.println("随机抽取" + random.getCount() + "个单词:");
+
         input(result);
         UpdateWord update = new UpdateWord();
         word.setEnglishWord("book");
@@ -41,9 +43,12 @@ public class Test {
         System.out.println("更新、删除后全部单词:");
         query = new QueryAllWord();
         result = query.queryAllWord();
-        input(result);
+
+        //调用input方法输出全部单词
+//        input(result);
     }
 
+    // 在命令行中输出表中的所有单词
     static void input(Word[] result) {
         for (int i = 0; i < result.length; i++) {
             System.out.printf("%-10s", result[i].getEnglishWord());
