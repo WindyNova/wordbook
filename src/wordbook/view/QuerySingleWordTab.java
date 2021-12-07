@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class QuerySingleWordTab extends JPanel {
     JTextField inputWord;     //输入要查询的单词
-    JButton submit;           //提交按钮
+    JButton submit,addToTest;           //提交按钮
     JTextArea showWord;       //显示查询结果
     QuerySingleWordHandler handleQueryOneWord; //负责处理查询单词
 

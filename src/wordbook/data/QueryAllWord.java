@@ -13,13 +13,13 @@ public class QueryAllWord extends ConnectDatabase {
         try {
             sql = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = sql.executeQuery("select * from word_table");
-            rs.last();
-            int recordAmount = rs.getRow();//结果集中的全部记录
+            rs.last();      //将游标移到最后
+            int recordAmount = rs.getRow();//结果集中的全部记录条数
             word = new Word[recordAmount];
             for (int i = 0; i < word.length; i++) {
                 word[i] = new Word();
             }
-            rs.beforeFirst();
+            rs.beforeFirst();   //将游标移到首部
             int i = 0;
             while (rs.next()) {
                 word[i].setEnglishWord(rs.getString(1));
