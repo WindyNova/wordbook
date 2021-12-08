@@ -1,3 +1,3 @@
 # wordbook
-
-双击englishBook.bat即可运行程序
+本项目使用MySQL数据库，在数据库中使用表存储单词和该单词的翻译解释。通过GUI界面管理单词簿，可以对单词进行增、删、改、查。
+双击wordbook.jar即可运行程序
