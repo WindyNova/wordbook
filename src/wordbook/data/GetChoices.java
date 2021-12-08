@@ -44,10 +44,10 @@ public class GetChoices extends ConnectDatabase{
             e.printStackTrace();
         }
 
-        for(int i=0; i<word.length;i++){
-            System.out.println(word[i].getEnglishWord());
-            System.out.println(word[i].getMeaning());
-        }
+//        for(int i=0; i<word.length;i++){
+//            System.out.println(word[i].getEnglishWord());
+//            System.out.println(word[i].getMeaning());
+//        }
 
 
         return word;

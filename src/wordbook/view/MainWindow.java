@@ -17,6 +17,7 @@ public class MainWindow extends JFrame {
     final MultipleChoiceTab MultipleChoiceView;//单选测试页面
 
     public MainWindow() {
+        super("单词簿");
         setBounds(100, 100, 720, 460);  //设置窗口显示位置和窗口大小
         setVisible(true);   //设置窗口状态：显示
         tabbedPane = new JTabbedPane(JTabbedPane.LEFT); //设定选项卡显示在左侧，实例化各个view

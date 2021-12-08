@@ -18,9 +18,10 @@ import java.awt.*;
  * @date 2021/12/6 18:47
  */
 public class MultipleChoiceTab extends JPanel {
-    protected JTextField question;
+    protected JTextField question;  //英文单词
 
     protected JButton refresh,bw1,bw2,bw3,bw4;
+    protected JTextField hint;  //提示信息
     Box BoxV;
     protected MultipleChoiceHandler handleMultipleChoice;
 
@@ -34,17 +35,25 @@ public class MultipleChoiceTab extends JPanel {
         BoxV = Box.createVerticalBox();
         question = new JTextField(20);
         question.setEditable(false);
-        refresh = new JButton("刷新");
-        bw1 = new JButton();
+        hint = new JTextField(20);
+        hint.setEditable(false);
+        hint.setVisible(false);
+
+        bw1 = new JButton("开始");
         bw2 = new JButton();
+        bw2.setVisible(false);
         bw3 = new JButton();
+        bw3.setVisible(false);
         bw4 = new JButton();
+        bw4.setVisible(false);
+
         BoxV.add(new JLabel("中译英"));
         BoxV.add(question);
         BoxV.add(bw1);
         BoxV.add(bw2);
         BoxV.add(bw3);
         BoxV.add(bw4);
+        BoxV.add(hint);
 
 
         add(BoxV);
@@ -53,7 +62,7 @@ public class MultipleChoiceTab extends JPanel {
     private void registerListener(){
         handleMultipleChoice = new MultipleChoiceHandler();
         handleMultipleChoice.setView(this);
-        refresh.addActionListener(handleMultipleChoice);
+
         bw1.addActionListener(handleMultipleChoice);
         bw2.addActionListener(handleMultipleChoice);
         bw3.addActionListener(handleMultipleChoice);
