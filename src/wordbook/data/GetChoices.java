@@ -25,8 +25,8 @@ public class GetChoices extends ConnectDatabase{
             sql = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = sql.executeQuery("select * from word_table order by rand() limit 4");
             rs.last();  //将游标移到最后
-            int recordAmout = rs.getRow();  //结果集中的全部记录条数
-            word = new Word[recordAmout];
+            int recordAmount = rs.getRow();  //结果集中的全部记录条数
+            word = new Word[recordAmount];
             for(int i = 0; i < word.length; i++){
                 word[i] = new Word();
             }

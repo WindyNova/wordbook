@@ -1,6 +1,6 @@
 package wordbook.view;
-/**
- * 查询所有单词界面
+/*
+  查询所有单词界面
  */
 
 import javax.swing.*;

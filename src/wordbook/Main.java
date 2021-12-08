@@ -1,6 +1,6 @@
 package wordbook;
-/**
- * Launcher
+/*
+  Launcher
  */
 
 import wordbook.data.FirstTimeInitializer;

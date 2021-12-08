@@ -1,6 +1,6 @@
 package wordbook.data;
-/**
- * 连接数据库
+/*
+  连接数据库
  */
 
 import java.sql.Connection;

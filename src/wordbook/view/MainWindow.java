@@ -1,6 +1,6 @@
 package wordbook.view;
-/**
- * 主窗口
+/*
+  主窗口
  */
 
 import javax.swing.*;
@@ -14,7 +14,7 @@ public class MainWindow extends JFrame {
     final QuerySingleWordTab queryOneWordView; //单个单词页面
     final QueryAllWordTab queryAllWordView; //所有单词页面
     final RandomlyQueryTab queryRandomView; //随机单词页面
-    final MultipleChoiceTab MultipleChoiceView;//单选测试页面
+    final QuizTab MultipleChoiceView;//单选测试页面
 
     public MainWindow() {
         super("单词簿");
@@ -28,9 +28,9 @@ public class MainWindow extends JFrame {
         tabbedPane.add("查询单个单词", queryOneWordView = new QuerySingleWordTab());
         tabbedPane.add("浏览全部单词", queryAllWordView = new QueryAllWordTab());
         tabbedPane.add("随机抽取单词", queryRandomView = new RandomlyQueryTab());
-        tabbedPane.add("单选测试",MultipleChoiceView = new MultipleChoiceTab());
+        tabbedPane.add("单选测试",MultipleChoiceView = new QuizTab());
         add(tabbedPane, BorderLayout.CENTER);
         validate();
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //关闭后销毁进程
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //关闭后销毁进程
     }
 }

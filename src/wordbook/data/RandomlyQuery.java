@@ -1,6 +1,6 @@
 package wordbook.data;
-/**
- * 随机抽取单词
+/*
+  随机抽取单词
  */
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,15 +39,15 @@ public class RandomlyQuery extends ConnectDatabase {
             //得到1至recordAmount之间count个不同随机整数（存放在index中）：
             int[] index = getRandomNumber(recordAmount, count);
             int m = 0;
-            for (int randomNumer : index) { // randomNumer依次取数组index每个单元的值
-                rs.absolute(randomNumer);//查询游标移动到第randomNumer行
+            for (int randomNumber : index) { // randomNumber依次取数组index每个单元的值
+                rs.absolute(randomNumber);//查询游标移动到第randomNumber行
                 word[m].setEnglishWord(rs.getString(1));
                 word[m].setMeaning(rs.getString(2));
                 m++;
             }
             con.close();
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return word;
     }
