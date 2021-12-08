@@ -9,11 +9,9 @@ import java.sql.DriverManager;
 public class ConnectDatabase {
     // 设置数据库连接所需的基本参数
     public final static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
-//    public final static String DBDRIVER = "com.mysql.jdbc.Driver";
-    public final static String DBURL = "jdbc:mysql://127.0.0.1:3306/wordbook";      //指定数据库
-    public final static String DBUSER = "root";     //数据库用户名
-//    public final static String PASSWORD = "12345678";
-    public final static String PASSWORD = "root";
+    public final static String DBURL = "jdbc:mysql://sz1.test.nodes.wdksl.com:33068/wordbook";      //指定数据库
+    public final static String DBUSER = "test";     //数据库用户名
+    public final static String PASSWORD = "12345678";
 
     // 定义连接对象
     Connection con;
