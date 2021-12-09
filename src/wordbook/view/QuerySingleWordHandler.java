@@ -17,8 +17,12 @@ public class QuerySingleWordHandler implements ActionListener {
         word.setEnglishWord(englishWord);
         QuerySingleWord query = new QuerySingleWord();
         Word result = query.queryOneWord(word);
-        if (result == null) return;
-        if(view.showWord.getText().equals(("您没有输入任何单词\n"))){
+        if (result == null) {
+            view.showWord.setText("本单词簿中不存在您输出的单词\n");
+            return;
+        }
+        if(view.showWord.getText().equals("您没有输入任何单词\n")
+        || view.showWord.getText().equals("本单词簿中不存在您输出的单词\n")){
             view.showWord.setText(null);
         }
             view.showWord.append(" " + result.getEnglishWord());
