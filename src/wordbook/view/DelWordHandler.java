@@ -12,7 +12,7 @@ public class DelWordHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String englishWord = view.inputWord.getText();
         if (englishWord.length() == 0)
-            return;
+        { view.hintMess.setText("您没有输入任何单词");return;}
         Word word = new Word();
         DelWord del = new DelWord();
         word.setEnglishWord(englishWord);

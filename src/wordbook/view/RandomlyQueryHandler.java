@@ -13,7 +13,7 @@ public class RandomlyQueryHandler implements ActionListener {
         view.showWord.setText("");
         String n = view.inputQueryNumber.getText().trim();
         if (n.length() == 0)
-            return;
+        { view.showWord.setText("您没有输入任何数据");return;}
         int count = 0;
         try {
             count = Integer.parseInt(n);

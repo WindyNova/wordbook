@@ -13,7 +13,7 @@ public class AddWordHandler implements ActionListener {
         String englishWord = view.inputWord.getText();  //获取用户输入的单词
         String meaning = view.inputMeaning.getText();   //获取用户输入的解释
         if (englishWord.length() == 0 || meaning.length() == 0)     //如果用户没有输入完整，则不执行操作
-            return;
+        { view.hint.setText("您没有输入任何单词");return;}
 
         Word word = new Word();     //定义word
         AddWord addWord = new AddWord();    //定义addWord

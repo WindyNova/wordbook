@@ -22,7 +22,7 @@ public class UpdateWordHandler implements ActionListener {
         String englishWord = view.inputWord.getText();
         String meaning = view.inputNewMeaning.getText();
         if (englishWord.length() == 0 || meaning.length() == 0)
-            return;
+        { view.hintMess.setText("您没有输入任何单词或解释");return;}
         Word word = new Word();
         UpdateWord update = new UpdateWord();
         word.setEnglishWord(englishWord);
@@ -37,7 +37,7 @@ public class UpdateWordHandler implements ActionListener {
     private void lookWord() {
         String englishWord = view.inputWord.getText();
         if (englishWord.length() == 0)
-            return;
+        { view.hintMess.setText("您没有输入任何单词");return;}
         Word word = new Word();
         word.setEnglishWord(englishWord);
         QuerySingleWord query = new QuerySingleWord();

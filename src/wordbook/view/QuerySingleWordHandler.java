@@ -12,16 +12,20 @@ public class QuerySingleWordHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String englishWord = view.inputWord.getText();
         if (englishWord.length() == 0)
-            return;
+        { view.showWord.setText("您没有输入任何单词\n");return;}
         Word word = new Word();
         word.setEnglishWord(englishWord);
         QuerySingleWord query = new QuerySingleWord();
         Word result = query.queryOneWord(word);
         if (result == null) return;
-        view.showWord.append(" " + result.getEnglishWord());
-        view.showWord.append("   " + result.getMeaning());
-        view.showWord.append("\n");
-    }
+        if(view.showWord.getText().equals(("您没有输入任何单词\n"))){
+            view.showWord.setText(null);
+        }
+            view.showWord.append(" " + result.getEnglishWord());
+            view.showWord.append("   " + result.getMeaning());
+            view.showWord.append("\n");
+        }
+
 
     public void setView(QuerySingleWordTab view) {
         this.view = view;
