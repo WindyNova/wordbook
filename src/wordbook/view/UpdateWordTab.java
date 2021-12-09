@@ -1,6 +1,7 @@
 package wordbook.view;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class UpdateWordTab extends JPanel {
     JTextField inputWord;        //输入要更新的单词
@@ -28,9 +29,13 @@ public class UpdateWordTab extends JPanel {
         hintMess = new JTextField(20);
         hintMess.setEditable(false);
         boxVOne.add(new JLabel("输入单词:"));
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("查看旧的解释:"));
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("输入新的解释:"));
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("提交新的解释:"));
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("提示信息:"));
         boxVTwo.add(inputWord);
         boxVTwo.add(lookWord);

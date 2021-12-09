@@ -1,6 +1,7 @@
 package wordbook.view;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class AddWordTab extends JPanel {
   protected JTextField inputWord;     //输入单词
@@ -32,8 +33,11 @@ public class AddWordTab extends JPanel {
         hint.setEditable(false);    //设置文本框对象：提示，禁止编辑
 
         boxVOne.add(new JLabel("单词:"));     //向列式盒1中添加标签：单词
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("解释:"));     //向列式盒1中添加标签：解释
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("提交:"));     //向列式盒1中添加标签：提交
+        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
         boxVOne.add(new JLabel("提示:"));     //向列式盒1中添加标签：提示
 
         boxVTwo.add(inputWord);     //向列式盒2中添加文本框对象：单词
