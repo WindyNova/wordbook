@@ -23,7 +23,7 @@ public class ConnectDatabase {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try { //创建名字是MyEnglishBook的数据库
+        try { //连接数据库
             con = DriverManager.getConnection(DBURL, DBUSER, PASSWORD); //连接数据库代码
 
         } catch (Exception e) {
