@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="wordbook.jar">
       <element id="module-output" name="wordbook" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/resources/mysql-connector-java-8.0.27.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
