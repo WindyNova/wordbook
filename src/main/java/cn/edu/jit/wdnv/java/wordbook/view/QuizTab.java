@@ -22,12 +22,6 @@ public class QuizTab extends JPanel {
     protected QuizHandler handleMultipleChoice;
 
     QuizTab(){
-        initializer();  //调用布局方法
-        registerListener(); //注册监听器
-    }
-
-    private void initializer(){
-
         BoxV = Box.createVerticalBox();
         question = new JTextField(20);
         question.setEditable(false);
@@ -39,7 +33,7 @@ public class QuizTab extends JPanel {
 
         bw3 = new JButton();
         bw4 = new JButton();
-continueButton =new JButton("继续");
+        continueButton =new JButton("继续");
 
 
         hint.setVisible(false);
@@ -62,6 +56,7 @@ continueButton =new JButton("继续");
 
 
         add(BoxV);
+        registerListener(); //注册监听器
     }
 
     private void registerListener(){

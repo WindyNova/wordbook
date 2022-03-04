@@ -9,11 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddWordTab extends JPanel {
-  protected JTextField inputWord;     //输入单词
-  protected JTextField inputMeaning;  //输入单词的翻译
-  protected JButton submit;           //提交按钮
-  protected JTextField hint;
-    public AddWordTab view;     //定义窗口为AddWordTab类型
+    protected JTextField inputWord;     //输入单词
+    protected JTextField inputMeaning;  //输入单词的翻译
+    protected JButton submit;           //提交按钮
+    protected JTextField hint;
 
     AddWordTab() { // 设置添加单词的页面布局
         Box boxH;                 //定义行式盒容器
@@ -59,10 +58,10 @@ public class AddWordTab extends JPanel {
     }
 
     protected void submitAdd() { //提交按钮的操作
-        String englishWord = view.inputWord.getText();  //获取用户输入的单词
-        String meaning = view.inputMeaning.getText();   //获取用户输入的解释
+        String englishWord = inputWord.getText();  //获取用户输入的单词
+        String meaning = inputMeaning.getText();   //获取用户输入的解释
         if (englishWord.length() == 0 || meaning.length() == 0)     //如果用户没有输入完整，则不执行操作
-        { view.hint.setText("您没有输入任何单词");return;}
+        { hint.setText("您没有输入任何单词");return;}
 
         Word word = new Word();     //定义word
         AddWord addWord = new AddWord();    //定义addWord
@@ -71,9 +70,9 @@ public class AddWordTab extends JPanel {
 
         int isOK = addWord.insertWord(word);    //定义int型isOK，或执行成功返回影响的行数，失败返回0
         if (isOK != 0)
-            view.hint.setText("添加单词成功");
+            hint.setText("添加单词成功");
         else
-            view.hint.setText("添加单词失败，单词已经在表里了");
+            hint.setText("添加单词失败，单词已经在表里了");
 
     }
 

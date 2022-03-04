@@ -3,9 +3,12 @@ package cn.edu.jit.wdnv.java.wordbook.view;
   主窗口
  */
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import javax.swing.*;
 import java.awt.*;
 
+@SpringBootApplication
 public class MainWindow extends JFrame {
     final JTabbedPane tabbedPane; //JTabbedPane选项卡集成视图（选项卡组件）
     final AddWordTab addWordView; //添加单词页面

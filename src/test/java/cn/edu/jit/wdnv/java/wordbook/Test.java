@@ -6,12 +6,6 @@ import cn.edu.jit.wdnv.java.wordbook.model.Word;
 public class Test {
     Word word = new Word();
 
-
-    @org.junit.Test
-    public void FirstTimeInitializer() {
-        new FirstTimeInitializer();
-    }
-
     @org.junit.Test
     public void AddWord() {
         String[][] a = {{"boy", "男孩"}, {"girl", "女孩"},
