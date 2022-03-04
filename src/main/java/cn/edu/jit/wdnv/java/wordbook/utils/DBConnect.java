@@ -1,4 +1,4 @@
-package cn.edu.jit.wdnv.java.wordbook.dao;
+package cn.edu.jit.wdnv.java.wordbook.utils;
 /*
   连接数据库
  */

@@ -1,6 +1,7 @@
 package cn.edu.jit.wdnv.java.wordbook.dao;
 
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.utils.DBConnect;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

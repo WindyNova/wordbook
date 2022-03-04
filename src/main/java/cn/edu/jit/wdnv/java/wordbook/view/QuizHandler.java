@@ -9,7 +9,7 @@ package cn.edu.jit.wdnv.java.wordbook.view;
 
 import cn.edu.jit.wdnv.java.wordbook.dao.GetChoices;
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
-import java.util.Timer;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
 public class QuizHandler implements ActionListener {
     QuizTab view;
     String right_answer;
-Timer timer=new Timer(String.valueOf(3000));
+
     public synchronized void actionPerformed(ActionEvent e) {
         //  System.out.println("当前按下的是："+e.getActionCommand());
 
@@ -29,35 +29,22 @@ Timer timer=new Timer(String.valueOf(3000));
 
         if (answer.equals("开始")) {
             init();
-            try {
-                setOptions();
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
+            setOptions();
         } else {
             if (answer.equals(right_answer)) {
 
-                try {
-
-                    setOptions();
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
-                }
+                setOptions();
 
 
 //                }
             } else {
 
 
-                try {
-                    view.hint.setText("回答错误，正确答案为：" + right_answer);
-                    view.hint.setVisible(true);
-                    view.continueButton.setVisible(true);
-                    if(view.continueButton.getModel().isArmed()) {
-                        setOptions();
-                    }
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
+                view.hint.setText("回答错误，正确答案为：" + right_answer);
+                view.hint.setVisible(true);
+                view.continueButton.setVisible(true);
+                if(view.continueButton.getModel().isArmed()) {
+                    setOptions();
                 }
 
             }
@@ -66,7 +53,7 @@ Timer timer=new Timer(String.valueOf(3000));
     }
 
 
-    private void setOptions() throws InterruptedException {
+    private void setOptions() {
         GetChoices choices = new GetChoices();
         Word[] result = choices.getChoices();
 

@@ -3,6 +3,7 @@ package cn.edu.jit.wdnv.java.wordbook.dao;
   随机抽取单词
  */
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.utils.DBConnect;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -57,7 +58,7 @@ public class RandomlyQuery extends DBConnect {
         // 得到1至max之间的amount个不同随机整数（包括1和max）：
         int[] randomNumber = new int[count];
         Set<Integer> set = new HashSet<>(); //set不允许有相同的元素
-        int index = set.size();
+        int index = 0;
         Random random = new Random();
         while (index < count) {
             int number = random.nextInt(max) + 1;

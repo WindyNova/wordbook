@@ -14,11 +14,16 @@ import javax.swing.*;
  * @date 2021/12/6 18:47
  */
 public class QuizTab extends JPanel {
-    protected JTextField question;  //英文单词
+    protected final JTextField question;  //英文单词
 
-    protected JButton textButton,bw1,bw2,bw3,bw4, continueButton;
-    protected JTextField hint;  //提示信息
-    Box BoxV;
+    protected final JButton textButton;
+    protected final JButton bw1;
+    protected final JButton bw2;
+    protected final JButton bw3;
+    protected final JButton bw4;
+    protected final JButton continueButton;
+    protected final JTextField hint;  //提示信息
+    final Box BoxV;
     protected QuizHandler handleMultipleChoice;
 
     QuizTab(){

@@ -8,9 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DelWordTab extends JPanel {
-   protected JTextField inputWord;     //输入要删除的单词
-    protected JButton submit;           //提交按钮
-   protected JTextField hintMess;
+   protected final JTextField inputWord;     //输入要删除的单词
+    protected final JButton submit;           //提交按钮
+   protected final JTextField hintMess;
 
     DelWordTab() {
         inputWord = new JTextField(12);

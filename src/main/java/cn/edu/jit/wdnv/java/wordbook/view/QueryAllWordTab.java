@@ -11,9 +11,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("Convert2Lambda")
 public class QueryAllWordTab extends JPanel {
-    protected JButton submit;    //查询按钮
-    protected JTextArea showWord;       //显示查询结果
+    protected final JButton submit;    //查询按钮
+    protected final JTextArea showWord;       //显示查询结果
 
     QueryAllWordTab() {
         setLayout(new BorderLayout());

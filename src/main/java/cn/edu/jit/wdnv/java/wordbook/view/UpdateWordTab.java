@@ -9,12 +9,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("Convert2Lambda")
 public class UpdateWordTab extends JPanel {
-    JTextField inputWord;        //输入要更新的单词
-    JTextField inputNewMeaning;  //输入单词的新解释
-    JButton lookWord;            //提交查看
-    JButton submit;              //提交更新按钮
-    JTextField hintMess;
+    final JTextField inputWord;        //输入要更新的单词
+    final JTextField inputNewMeaning;  //输入单词的新解释
+    final JButton lookWord;            //提交查看
+    final JButton submit;              //提交更新按钮
+    final JTextField hintMess;
 
     UpdateWordTab() {
         Box boxH;                 //行式盒

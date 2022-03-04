@@ -9,10 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddWordTab extends JPanel {
-    protected JTextField inputWord;     //输入单词
-    protected JTextField inputMeaning;  //输入单词的翻译
-    protected JButton submit;           //提交按钮
-    protected JTextField hint;
+    protected final JTextField inputWord;     //输入单词
+    protected final JTextField inputMeaning;  //输入单词的翻译
+    protected final JButton submit;           //提交按钮
+    protected final JTextField hint;
 
     AddWordTab() { // 设置添加单词的页面布局
         Box boxH;                 //定义行式盒容器

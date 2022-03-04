@@ -8,10 +8,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("Convert2Lambda")
 public class QuerySingleWordTab extends JPanel {
-    protected JTextField inputWord;     //输入要查询的单词
-    protected JButton submit;
-    protected JTextArea showWord;       //显示查询结果
+    protected final JTextField inputWord;     //输入要查询的单词
+    protected final JButton submit;
+    protected final JTextArea showWord;       //显示查询结果
 
     QuerySingleWordTab() {
         setLayout(new BorderLayout());

@@ -8,10 +8,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("Convert2Lambda")
 public class RandomlyQueryTab extends JPanel {
-    JTextField inputQueryNumber;//输入要查询的单词数目
-    JButton submit;            //查询按钮
-    JTextArea showWord;       //显示查询结果
+    final JTextField inputQueryNumber;//输入要查询的单词数目
+    final JButton submit;            //查询按钮
+    final JTextArea showWord;       //显示查询结果
 
     RandomlyQueryTab() {
         setLayout(new BorderLayout());
@@ -29,11 +30,11 @@ public class RandomlyQueryTab extends JPanel {
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-RandomlyQueryTab();
+RandomlyQuery();
             }
         });
     }
-protected void RandomlyQueryTab() {
+protected void RandomlyQuery() {
     showWord.setText("");
     String n = inputQueryNumber.getText().trim();
     if (n.length() == 0) {

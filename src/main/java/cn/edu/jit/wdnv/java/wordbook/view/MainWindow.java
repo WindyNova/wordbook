@@ -1,16 +1,12 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
-/*
-  主窗口
- */
-
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.swing.*;
 import java.awt.*;
 
-@SpringBootApplication
-public class MainWindow extends JFrame {
-    final JTabbedPane tabbedPane; //JTabbedPane选项卡集成视图（选项卡组件）
+public class MainWindow extends JFrame{
+    //设定选项卡显示在左侧，实例化各个view
+    private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+    private JPanel panel;
     final AddWordTab addWordView; //添加单词页面
     final UpdateWordTab updateWordView; //修改单词页面
     final DelWordTab delWordView; //删除单词页面
@@ -23,8 +19,6 @@ public class MainWindow extends JFrame {
         super("单词簿");
         setBounds(100, 100, 720, 460);  //设置窗口显示位置和窗口大小
         setVisible(true);   //设置窗口状态：显示
-        tabbedPane = new JTabbedPane(JTabbedPane.LEFT); //设定选项卡显示在左侧，实例化各个view
-
         tabbedPane.add("添加单词", addWordView = new AddWordTab());     //设置选项卡标题，并附加相应的页面
         tabbedPane.add("修改单词", updateWordView = new UpdateWordTab());
         tabbedPane.add("删除单词", delWordView = new DelWordTab());
