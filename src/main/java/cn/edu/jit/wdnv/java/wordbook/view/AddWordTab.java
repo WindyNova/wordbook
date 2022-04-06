@@ -1,7 +1,9 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
-import cn.edu.jit.wdnv.java.wordbook.dao.AddWord;
-import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +16,8 @@ public class AddWordTab extends JPanel {
     protected final JButton submit;           //提交按钮
     protected final JTextField hint;
 
+    @Autowired
+    private WordMapper wordMapper;
     AddWordTab() { // 设置添加单词的页面布局
         Box boxH;                 //定义行式盒容器
         Box boxVOne, boxVTwo;      //定义列式盒容器
@@ -31,11 +35,11 @@ public class AddWordTab extends JPanel {
         hint.setEditable(false);    //设置文本框对象：提示，禁止编辑
 
         boxVOne.add(new JLabel("单词:"));     //向列式盒1中添加标签：单词
-        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
+        boxVOne.add(Box.createRigidArea(new Dimension(5, 10)));
         boxVOne.add(new JLabel("解释:"));     //向列式盒1中添加标签：解释
-        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
+        boxVOne.add(Box.createRigidArea(new Dimension(5, 10)));
         boxVOne.add(new JLabel("提交:"));     //向列式盒1中添加标签：提交
-        boxVOne.add(Box.createRigidArea(new Dimension(5,10)));
+        boxVOne.add(Box.createRigidArea(new Dimension(5, 10)));
         boxVOne.add(new JLabel("提示:"));     //向列式盒1中添加标签：提示
 
         boxVTwo.add(inputWord);     //向列式盒2中添加文本框对象：单词
@@ -61,15 +65,13 @@ public class AddWordTab extends JPanel {
         String englishWord = inputWord.getText();  //获取用户输入的单词
         String meaning = inputMeaning.getText();   //获取用户输入的解释
         if (englishWord.length() == 0 || meaning.length() == 0)     //如果用户没有输入完整，则不执行操作
-        { hint.setText("您没有输入任何单词");return;}
+        {
+            hint.setText("您没有输入任何单词");
 
-        Word word = new Word();     //定义word
-        AddWord addWord = new AddWord();    //定义addWord
-        word.setEnglishWord(englishWord);   //设置word的单词
-        word.setMeaning(meaning);           //设置word的解释
+        }
+          int status = wordMapper.insertWord(englishWord, meaning);
 
-        int isOK = addWord.insertWord(word);    //定义int型isOK，或执行成功返回影响的行数，失败返回0
-        if (isOK != 0)
+        if (status != 0)
             hint.setText("添加单词成功");
         else
             hint.setText("添加单词失败，单词已经在表里了");

@@ -1,16 +1,16 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
-import cn.edu.jit.wdnv.java.wordbook.dao.DelWord;
-import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DelWordTab extends JPanel {
-   protected final JTextField inputWord;     //输入要删除的单词
+    protected final JTextField inputWord;     //输入要删除的单词
     protected final JButton submit;           //提交按钮
-   protected final JTextField hintMess;
+    protected final JTextField hintMess;
+    WordMapper wordMapper;
 
     DelWordTab() {
         inputWord = new JTextField(12);
@@ -33,13 +33,11 @@ public class DelWordTab extends JPanel {
 
     protected void submitDel() {
         String englishWord = inputWord.getText();
-        if (englishWord.length() == 0)
-        { hintMess.setText("您没有输入任何单词");return;}
-        Word word = new Word();
-        DelWord del = new DelWord();
-        word.setEnglishWord(englishWord);
-        int isOK = del.delWord(word);
-        if (isOK != 0)
+        if (englishWord.length() == 0) {
+            hintMess.setText("您没有输入任何单词");
+        }
+        int status = wordMapper.deleteWord(englishWord);
+        if (status != 0)
             hintMess.setText("删除单词成功");
         else
             hintMess.setText("删除失败，单词不在表里");

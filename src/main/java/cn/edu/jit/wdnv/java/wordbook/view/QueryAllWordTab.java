@@ -3,18 +3,17 @@ package cn.edu.jit.wdnv.java.wordbook.view;
   查询所有单词界面
  */
 
-import cn.edu.jit.wdnv.java.wordbook.dao.QueryAllWord;
-import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-@SuppressWarnings("Convert2Lambda")
 public class QueryAllWordTab extends JPanel {
     protected final JButton submit;    //查询按钮
     protected final JTextArea showWord;       //显示查询结果
+    WordMapper wordMapper;
 
     QueryAllWordTab() {
         setLayout(new BorderLayout());
@@ -33,14 +32,7 @@ public class QueryAllWordTab extends JPanel {
 
 
     protected void queryAllWord() {
-        showWord.setText("");
-        QueryAllWord query = new QueryAllWord();
-        Word[] result = query.queryAllWord();
-        for (int i = 0; i < result.length; i++) {
-            int m = i + 1;
-            showWord.append(m + "." + result[i].getEnglishWord());
-            showWord.append("   " + result[i].getMeaning());
-            showWord.append("\n");
-        }
+
+        showWord.setText(String.valueOf(wordMapper.queryAllWords()));
     }
 }
