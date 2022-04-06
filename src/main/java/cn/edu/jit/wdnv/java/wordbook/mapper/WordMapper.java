@@ -37,5 +37,5 @@ public interface WordMapper {
     Word getQuiz();
 
     @Select("select * from word_table order by rand() limit #{count}")
-    Word getRandomWord(int count);
+    List<Word> getRandomWord(int count) ;
 }

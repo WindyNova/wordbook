@@ -2,17 +2,20 @@ package cn.edu.jit.wdnv.java.wordbook.view;
 
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+@Component
 public class GetMeaningTab extends JPanel {
     protected final JTextField inputWord;     //输入要查询的单词
     protected final JButton submit;
-    protected final JTextArea showWord;       //显示查询结果
+    protected final JTextArea showWord;//显示查询结果
+    @Autowired
     WordMapper wordMapper;
 
     GetMeaningTab() {
@@ -42,6 +45,7 @@ public class GetMeaningTab extends JPanel {
             return;
         }
         Word result = wordMapper.getMeaning(englishWord);
+        showWord.append(result +"\n");
         if (result == null) {
             showWord.setText("本单词簿中不存在您输出的单词\n");
             return;

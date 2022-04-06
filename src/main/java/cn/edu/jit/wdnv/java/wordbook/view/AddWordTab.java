@@ -3,22 +3,26 @@ package cn.edu.jit.wdnv.java.wordbook.view;
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@Component
 public class AddWordTab extends JPanel {
+
     protected final JTextField inputWord;     //输入单词
     protected final JTextField inputMeaning;  //输入单词的翻译
     protected final JButton submit;           //提交按钮
     protected final JTextField hint;
 
     @Autowired
-    private WordMapper wordMapper;
+    WordMapper wordMapper;
+
     AddWordTab() { // 设置添加单词的页面布局
+
         Box boxH;                 //定义行式盒容器
         Box boxVOne, boxVTwo;      //定义列式盒容器
         boxH = Box.createHorizontalBox();   //创建行式盒（横向排列元素）
@@ -67,15 +71,13 @@ public class AddWordTab extends JPanel {
         if (englishWord.length() == 0 || meaning.length() == 0)     //如果用户没有输入完整，则不执行操作
         {
             hint.setText("您没有输入任何单词");
-
         }
-          int status = wordMapper.insertWord(englishWord, meaning);
 
-        if (status != 0)
+        try {
+            wordMapper.insertWord(englishWord, meaning);
             hint.setText("添加单词成功");
-        else
+        } catch (Exception e) {
             hint.setText("添加单词失败，单词已经在表里了");
-
+        }
     }
-
 }

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="wordbook" target="8" />
+      <module name="wordbook" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

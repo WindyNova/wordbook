@@ -4,18 +4,24 @@ package cn.edu.jit.wdnv.java.wordbook.view;
  */
 
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QueryAllWordTab extends JPanel {
+@Component
+public class AllWordsTab extends JPanel {
     protected final JButton submit;    //查询按钮
-    protected final JTextArea showWord;       //显示查询结果
+    protected final JTextArea showWord;//显示查询结果
+
+    @Autowired
     WordMapper wordMapper;
 
-    QueryAllWordTab() {
+
+    AllWordsTab() {
         setLayout(new BorderLayout());
         submit = new JButton("查询全部单词");
         add(submit, BorderLayout.NORTH);

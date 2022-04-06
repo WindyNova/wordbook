@@ -4,6 +4,8 @@
 #
 ############################################################
 spring:
+  main:
+    web-application-type: NONE
   datasource:
     type: com.zaxxer.hikari.HikariDataSource   # ??????HikariCP
     driver-class-name: com.mysql.cj.jdbc.Driver

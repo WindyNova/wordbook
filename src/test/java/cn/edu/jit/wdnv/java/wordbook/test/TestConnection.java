@@ -2,7 +2,7 @@ package cn.edu.jit.wdnv.java.wordbook.test;
 
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mybatis.logging.Logger;
 import org.mybatis.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
