@@ -15,8 +15,9 @@ public class GetMeaningTab extends JPanel {
     protected final JTextField inputWord;     //输入要查询的单词
     protected final JButton submit;
     protected final JTextArea showWord;//显示查询结果
+
     @Autowired
-    WordMapper wordMapper;
+   private  WordMapper wordMapper;
 
     GetMeaningTab() {
         setLayout(new BorderLayout());
@@ -45,7 +46,7 @@ public class GetMeaningTab extends JPanel {
             return;
         }
         Word result = wordMapper.getMeaning(englishWord);
-        showWord.append(result +"\n");
+        showWord.append(result + "\n");
         if (result == null) {
             showWord.setText("本单词簿中不存在您输出的单词\n");
             return;

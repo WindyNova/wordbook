@@ -1,7 +1,6 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +18,7 @@ public class AddWordTab extends JPanel {
     protected final JTextField hint;
 
     @Autowired
-    WordMapper wordMapper;
+    private WordMapper wordMapper;
 
     AddWordTab() { // 设置添加单词的页面布局
 

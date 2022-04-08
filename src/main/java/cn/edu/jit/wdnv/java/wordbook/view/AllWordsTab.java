@@ -18,7 +18,7 @@ public class AllWordsTab extends JPanel {
     protected final JTextArea showWord;//显示查询结果
 
     @Autowired
-    WordMapper wordMapper;
+    private WordMapper wordMapper;
 
 
     AllWordsTab() {

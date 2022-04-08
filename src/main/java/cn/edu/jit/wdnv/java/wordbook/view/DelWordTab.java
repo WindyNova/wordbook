@@ -1,7 +1,6 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +13,9 @@ public class DelWordTab extends JPanel {
     protected final JTextField inputWord;     //输入要删除的单词
     protected final JButton submit;           //提交按钮
     protected final JTextField hintMess;
+
     @Autowired
-    WordMapper wordMapper;
+   private WordMapper wordMapper;
 
     DelWordTab() {
         inputWord = new JTextField(12);

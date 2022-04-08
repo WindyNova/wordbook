@@ -1,4 +1,5 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
+
 import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class RandomWordsTab extends JPanel {
     final JTextArea showWord;       //显示查询结果
 
     @Autowired
-    WordMapper wordMapper;
+    private WordMapper wordMapper;
 
     RandomWordsTab() {
         setLayout(new BorderLayout());
