@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MybatisBuilder.project.settings">
+    <option name="connectionInfoList">
+      <list>
+        <ConnectionInfo>
+          <option name="database" value="wordbook" />
+          <option name="description" value="" />
+          <option name="driverClass" value="" />
+          <option name="driverLibrary" value="" />
+          <option name="driverType" value="MySQL" />
+          <option name="host" value="127.0.0.1" />
+          <option name="id" value="177ec3ad57af4d67ab3ea89e84c35a2b" />
+          <option name="name" value="127.0.0.1" />
+          <option name="port" value="3306" />
+          <option name="url" value="" />
+          <option name="userName" value="user" />
+        </ConnectionInfo>
+        <ConnectionInfo>
+          <option name="database" value="wordbook" />
+          <option name="description" value="" />
+          <option name="driverClass" value="" />
+          <option name="driverLibrary" value="" />
+          <option name="driverType" value="MySQL" />
+          <option name="host" value="127.0.0.1" />
+          <option name="id" value="7d6ef8d3dc6e410792f9a7b5fc578271" />
+          <option name="name" value="unnamed" />
+          <option name="port" value="3306" />
+          <option name="url" value="" />
+          <option name="userName" value="user" />
+        </ConnectionInfo>
+      </list>
+    </option>
+    <option name="defaultParameters">
+      <DefaultParameters>
+        <option name="renameConfig">
+          <Config>
+            <option name="mapperTypePattern" value="" />
+            <option name="exampleTypePattern" value="" />
+            <option name="sqlFileNamePattern" value="" />
+          </Config>
+        </option>
+        <option name="selectWithLockConfig">
+          <SelectWithLockConfig>
+            <option name="byPrimaryKeyWithLockOverride" value="" />
+            <option name="byExampleWithLockOverride" value="" />
+          </SelectWithLockConfig>
+        </option>
+      </DefaultParameters>
+    </option>
+    <option name="historyMap">
+      <map>
+        <entry key="JAVA_CLIENT_PACKAGE">
+          <value>
+            <list>
+              <option value="cn.edu.jit.wdnv.java.wordbook.mapper" />
+            </list>
+          </value>
+        </entry>
+        <entry key="JAVA_MODEL_PACKAGE">
+          <value>
+            <list>
+              <option value="cn.edu.jit.wdnv.java.wordbook.model" />
+            </list>
+          </value>
+        </entry>
+        <entry key="SQL_MAP_PACKAGE">
+          <value>
+            <list>
+              <option value="sqlmap" />
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastGeneratorParamWrapper">
+      <GeneratorParamWrapper>
+        <option name="defaultTableConfigWrapper">
+          <TableConfigurationWrapper>
+            <option name="countByExampleStatementEnabled" value="false" />
+            <option name="deleteByExampleStatementEnabled" value="false" />
+            <option name="domainObjectRenamingRule">
+              <DomainObjectRenamingRule>
+                <option name="replaceString" value="" />
+                <option name="searchString" value="" />
+              </DomainObjectRenamingRule>
+            </option>
+            <option name="generatedKeyWrapper">
+              <GeneratedKeyWrapper>
+                <option name="column" value="" />
+              </GeneratedKeyWrapper>
+            </option>
+            <option name="selectByExampleStatementEnabled" value="false" />
+            <option name="updateByExampleStatementEnabled" value="false" />
+          </TableConfigurationWrapper>
+        </option>
+        <option name="javaClientConfig">
+          <JavaClientGeneratorConfiguration>
+            <option name="configurationType" value="ANNOTATEDMAPPER" />
+            <option name="targetPackage" value="cn.edu.jit.wdnv.java.wordbook.mapper" />
+            <option name="targetProject" value="$PROJECT_DIR$/src/main/java" />
+          </JavaClientGeneratorConfiguration>
+        </option>
+        <option name="javaModelConfig">
+          <JavaModelGeneratorConfiguration>
+            <option name="targetPackage" value="cn.edu.jit.wdnv.java.wordbook.model" />
+            <option name="targetProject" value="$PROJECT_DIR$/src/main/java" />
+          </JavaModelGeneratorConfiguration>
+        </option>
+        <option name="selectedPlugins">
+          <map>
+            <entry key="com.chuntung.plugin.mybatis.builder.generator.plugins.LombokPlugin" />
+            <entry key="com.chuntung.plugin.mybatis.builder.generator.plugins.MapperAnnotationPlugin">
+              <value>
+                <PluginConfigWrapper>
+                  <option name="json" value="{&quot;customAnnotationType&quot;:&quot;org.springframework.stereotype.Repository&quot;}" />
+                  <option name="type" value="com.chuntung.plugin.mybatis.builder.generator.plugins.MapperAnnotationPlugin$Config" />
+                </PluginConfigWrapper>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="selectedTables">
+          <list>
+            <TableInfo>
+              <option name="customColumns">
+                <list />
+              </option>
+              <option name="database" value="wordbook" />
+              <option name="domainName" value="Word" />
+              <option name="keyColumn" value="word" />
+              <option name="tableComment" value="" />
+              <option name="tableName" value="word_table" />
+            </TableInfo>
+          </list>
+        </option>
+        <option name="sqlMapConfig">
+          <SqlMapGeneratorConfiguration>
+            <option name="targetPackage" value="sqlmap" />
+            <option name="targetProject" value="$PROJECT_DIR$/src/main/resources" />
+          </SqlMapGeneratorConfiguration>
+        </option>
+        <option name="targetRuntime" value="MyBatis3Simple" />
+      </GeneratorParamWrapper>
+    </option>
+    <option name="tableInfoMap">
+      <map>
+        <entry key="schoolconnect#class">
+          <value>
+            <TableInfo>
+              <option name="database" value="schoolconnect" />
+              <option name="domainName" value="Class" />
+              <option name="tableComment" value="班级表" />
+              <option name="tableName" value="class" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="wordbook#word_table">
+          <value>
+            <TableInfo>
+              <option name="customColumns">
+                <list />
+              </option>
+              <option name="database" value="wordbook" />
+              <option name="domainName" value="Word" />
+              <option name="keyColumn" value="word" />
+              <option name="tableComment" value="" />
+              <option name="tableName" value="word_table" />
+            </TableInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
