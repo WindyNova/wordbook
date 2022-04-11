@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 @Component
 public class AddWordTab extends JPanel {
@@ -22,8 +21,7 @@ public class AddWordTab extends JPanel {
 
     AddWordTab() { // 设置添加单词的页面布局
 
-        Box boxH;                 //定义行式盒容器
-        Box boxVOne, boxVTwo;      //定义列式盒容器
+        Box boxH,boxVOne, boxVTwo;                 //定义行式盒容器
         boxH = Box.createHorizontalBox();   //创建行式盒（横向排列元素）
         boxVOne = Box.createVerticalBox();  //创建列式盒1（纵向排列元素）
         boxVTwo = Box.createVerticalBox();  //创建列式盒2（纵向排列元素）
@@ -56,12 +54,8 @@ public class AddWordTab extends JPanel {
         add(boxH);      //向页面中添加盒容器：行式盒1
 
 
-        submit.addActionListener(new ActionListener() { //侦听提交按钮的按键操作
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                submitAdd();
-            }
-        });
+        //侦听提交按钮的按键操作
+        submit.addActionListener(e -> submitAdd());
     }
 
     protected void submitAdd() { //提交按钮的操作

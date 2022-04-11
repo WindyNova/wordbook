@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Component
 public class DelWordTab extends JPanel {
@@ -15,7 +13,7 @@ public class DelWordTab extends JPanel {
     protected final JTextField hintMess;
 
     @Autowired
-   private WordMapper wordMapper;
+    private WordMapper wordMapper;
 
     DelWordTab() {
         inputWord = new JTextField(12);
@@ -27,12 +25,7 @@ public class DelWordTab extends JPanel {
         add(submit);
         add(new JLabel("提示:"));
         add(hintMess);
-        submit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                submitDel();
-            }
-        });
+        submit.addActionListener(e -> submitDel());
     }
 
 

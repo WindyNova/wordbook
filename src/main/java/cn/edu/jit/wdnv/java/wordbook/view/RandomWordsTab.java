@@ -1,14 +1,12 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
-import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
+import cn.edu.jit.wdnv.java.wordbook.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 @Component
@@ -18,7 +16,7 @@ public class RandomWordsTab extends JPanel {
     final JTextArea showWord;       //显示查询结果
 
     @Autowired
-    private WordMapper wordMapper;
+    private WordService wordService;
 
     RandomWordsTab() {
         setLayout(new BorderLayout());
@@ -33,12 +31,7 @@ public class RandomWordsTab extends JPanel {
         add(pNorth, BorderLayout.NORTH);
         add(new JScrollPane(showWord), BorderLayout.CENTER);
 
-        submit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                GetRandomWords();
-            }
-        });
+        submit.addActionListener(e -> GetRandomWords());
     }
 
     protected void GetRandomWords() {
@@ -49,9 +42,9 @@ public class RandomWordsTab extends JPanel {
             return;
         }
         try {
-            List<Word> words = wordMapper.getRandomWord(Integer.parseInt(n));
+            List<Word> words = wordService.getRandomWord(Integer.parseInt(n));
             showWord.setText(String.valueOf(words));
-        } catch (NumberFormatException exp) {
+        } catch (NumberFormatException e) {
             showWord.setText("请输入正整数");
         }
 

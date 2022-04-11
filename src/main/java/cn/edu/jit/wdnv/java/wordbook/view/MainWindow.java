@@ -6,10 +6,12 @@ import org.springframework.stereotype.Component;
 import javax.swing.*;
 import java.awt.*;
 
+import static javax.swing.SwingConstants.LEFT;
+
 @Component
 public class MainWindow extends JFrame {
     //设定选项卡显示在左侧，实例化各个view
-    private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+    private JTabbedPane tabbedPane = new JTabbedPane(LEFT);
     private JPanel panel;
     AddWordTab addWordView = GetBeanUtil.getBean(AddWordTab.class); //添加单词页面
     DelWordTab delWordView = GetBeanUtil.getBean(DelWordTab.class); //删除单词页面
@@ -17,7 +19,7 @@ public class MainWindow extends JFrame {
     AllWordsTab allWordsView = GetBeanUtil.getBean(AllWordsTab.class); //所有单词页面
     UpdateWordsTab updateWordsView = GetBeanUtil.getBean(UpdateWordsTab.class); //所有单词页
     RandomWordsTab randomWordsView = GetBeanUtil.getBean(RandomWordsTab.class); //随机单词页面
-
+    QuizTab quizView = GetBeanUtil.getBean(QuizTab.class); //
 
     public MainWindow() {
         super("单词簿");
@@ -29,8 +31,10 @@ public class MainWindow extends JFrame {
         tabbedPane.add("删除单词", delWordView);
         tabbedPane.add("浏览全部单词", allWordsView);
         tabbedPane.add("随机抽取单词", randomWordsView);
+        tabbedPane.add("测验", quizView);
         this.add(tabbedPane, BorderLayout.CENTER);
         validate();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //关闭后销毁进程
     }
+
 }

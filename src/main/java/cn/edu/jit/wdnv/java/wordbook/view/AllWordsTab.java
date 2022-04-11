@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Component
 public class AllWordsTab extends JPanel {
@@ -28,12 +26,7 @@ public class AllWordsTab extends JPanel {
         showWord = new JTextArea();
         showWord.setFont(new Font("宋体", Font.BOLD, 20));
         add(new JScrollPane(showWord), BorderLayout.CENTER);
-        submit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                queryAllWord();
-            }
-        });
+        submit.addActionListener(e -> queryAllWord());
     }
 
 

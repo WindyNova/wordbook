@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Component
 public class UpdateWordsTab extends JPanel {
@@ -23,8 +21,7 @@ public class UpdateWordsTab extends JPanel {
     private WordMapper wordMapper;
 
     UpdateWordsTab() {
-        Box boxH;                 //行式盒
-        Box boxVOne, boxVTwo;      //列式盒
+        Box boxH,boxVOne, boxVTwo;                 //行式盒子，列式盒子
         boxH = Box.createHorizontalBox();
         boxVOne = Box.createVerticalBox();
         boxVTwo = Box.createVerticalBox();
@@ -53,12 +50,9 @@ public class UpdateWordsTab extends JPanel {
         boxH.add(boxVTwo);
         add(boxH);
 
-        submit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UpdateWordsAction();
-            }
-        });
+        lookWord.addActionListener(e -> inputNewMeaning.setText(String.valueOf(wordMapper.getMeaning(inputWord.getText())))); //查看原有解释
+        submit.addActionListener(e -> UpdateWordsAction()); //提交新的解释
+
     }
 
 

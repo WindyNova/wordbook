@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.*;
 
 @Repository
 @Mapper
@@ -31,10 +31,13 @@ public interface WordMapper {
     int updateWord(String word, String meaning);
 
     @Select("select meaning from word_table where word = #{word}")
-    Word getMeaning(String word);
+    String getMeaning(String word);
+
+    @Select("select word,meaning from word_table where word = #{word}")
+    Word getWordNMeaning(String word);
 
     @Select("select * from word_table order by rand() limit 4")
-    Word getQuiz();
+    Word[] getQuiz();
 
     @Select("select * from word_table order by rand() limit #{count}")
     List<Word> getRandomWord(int count);
