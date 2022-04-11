@@ -1,15 +1,14 @@
 ############################################################
 #
-# ???????
+# Spring Configuration
 #
 ############################################################
 spring:
   main:
     web-application-type: NONE
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource   # ??????HikariCP
+    type: com.zaxxer.hikari.HikariDataSource   # HikariCP connection pool
     driver-class-name: com.mysql.cj.jdbc.Driver
-    #   ??????
     url: jdbc:mysql://127.0.0.1:3306/wordbook?characterEncoding=utf-8
     username: user
     password: 12345678
@@ -25,12 +24,12 @@ spring:
 
 ############################################################
 #
-# mybatis ??
+# mybatis
 #
 ############################################################
 mybatis:
-  type-aliases-package: cn.edu.jit.wdnv.java.wordbook.model          # ??POJO??????
-  mapper-locations: classpath:cn/edu/jit/wdnv/java/wordbook/mapper/*.java      # mapper????
+  type-aliases-package: cn.edu.jit.wdnv.java.wordbook.model         # define pojo class path
+  mapper-locations: classpath:cn/edu/jit/wdnv/java/wordbook/mapper/*.java      # mapper path
 #showSql
 logging:
   level:
