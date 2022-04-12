@@ -4,8 +4,10 @@ import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.Arrays;
 
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" },loader = HeadlessSpringBootContextLoader.class)
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,28 +29,26 @@ class FunctionTest {
     private WordMapper wordMapper;
 
     @Test
+    @Before
+    void DelWord() {
+        wordMapper.deleteWord("Test123");
+        Assert.assertEquals(null, wordMapper.getMeaning("Test123"));
+    }
+
+    @Test
+    @Before
     void AddWord() {
 
-        String[][] a = {{"boy", "男孩"}, {"girl", "女孩"},
-                {"sun", "太阳"}, {"moon", "月亮"},
-                {"book", "书籍"}, {"water", "水"}
-        };
-        for (String[] strings : a) {
-            wordMapper.insertWord(strings[0], strings[1]);
-        }
-   //     Assert.assertEquals(wordMapper.getMeaning());
-    }
-
-    @Test
-    void GetMeaning() {
+        wordMapper.insertWord("Test123","Test你好");
         Assert.assertEquals("Test你好", wordMapper.getMeaning("Test123"));
-
     }
 
-    @Test
-    void QueryAllWord() {
 
-Assertions.assertNotNull(wordMapper.queryAllWords());
+
+    @Test
+    void TestConnections() {
+
+Assertions.assertNotNull(wordMapper.TestConnections());
     }
 
     @Test
@@ -57,14 +59,13 @@ Assertions.assertNotNull(wordMapper.queryAllWords());
 
     @Test
     void UpdateWord() {
-        wordMapper.updateWord("book", "n.书籍，卷，帐簿，名册，工作簿 vt.预订，登记");
-        wordMapper.deleteWord("boy");
-        wordMapper.deleteWord("del");
+        wordMapper.updateWord("Test123", "Test321");
+        Assert.assertEquals("Test321", wordMapper.getMeaning("Test123"));
     }
         @Test
-        void test() {
+        void TestQuiz() {
             Word[] result = wordMapper.getQuiz();
-            System.out.println(result);
+            System.out.println(Arrays.toString(result));
 
     }
 
