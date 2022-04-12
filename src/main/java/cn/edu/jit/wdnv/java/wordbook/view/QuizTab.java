@@ -14,9 +14,7 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 /**
  * @author Fuzzbear
@@ -75,61 +73,26 @@ public class QuizTab extends JPanel {
 
         add(BoxV);
 
-        textButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setOptions();
-            }
-        });
+        textButton.addActionListener(e -> setOptions());
 
-        bw1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Clicky(e);
-            }
-        });
-        bw2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Clicky(e);
-            }
-        });
-        bw3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Clicky(e);
-            }
-        });
-        bw4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Clicky(e);
-            }
-        });
-        continueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Clicky(e);
-            }
-        });
+        bw1.addActionListener(e -> Clicky(e));
+        bw2.addActionListener(e -> Clicky(e));
+        bw3.addActionListener(e -> Clicky(e));
+        bw4.addActionListener(e -> Clicky(e));
+        continueButton.addActionListener(e -> Clicky(e));
     }
 
     public synchronized void Clicky(ActionEvent e) {
-        //  System.out.println("当前按下的是："+e.getActionCommand());
 
         String answer = e.getActionCommand(); //获取ActionCommand
 
 
         if (answer.equals("开始")) {
-            init();
+            showSelectionButtons();
             setOptions();
         } else {
             if (answer.equals(right_answer)) {
-
                 setOptions();
-
-
-//                }
             } else {
 
 
@@ -139,7 +102,6 @@ public class QuizTab extends JPanel {
                 if (continueButton.getModel().isArmed()) {
                     setOptions();
                 }
-
             }
             repaint();
         }
@@ -148,9 +110,9 @@ public class QuizTab extends JPanel {
 
     private void setOptions() {
 
-        Word[] result = getChoices();
-
+        Word[] result = wordMapper.getQuiz();
         int index = (int) (Math.random() * 4);
+showSelectionButtons();
 
         question.setText(result[index].getWord());   // 设置题目
         bw1.setText(result[0].getMeaning());
@@ -165,41 +127,11 @@ public class QuizTab extends JPanel {
 
     }
 
-    public Word[] getChoices() {
-
-        Word[] word = new Word[0];
-        try {
-            ResultSet rs = (ResultSet) wordMapper.getQuiz();
-            rs.last();  //将游标移到最后
-            int recordAmount = rs.getRow();  //结果集中的全部记录条数
-            word = new Word[recordAmount];
-            for (int i = 0; i < word.length; i++) {
-                word[i] = new Word();
-            }
-            rs.beforeFirst();   //将游标移到首部
-            int i = 0;
-            while (rs.next()) {
-                word[i].setWord(rs.getString(1));
-                word[i].setMeaning(rs.getString(2));
-                i++;
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-        return word;
-    }
-
-
-    private void init() {
+    private void showSelectionButtons() {
         textButton.setVisible(false);
         bw1.setVisible(true);
         bw2.setVisible(true);
         bw3.setVisible(true);
         bw4.setVisible(true);
-
-
     }
 }
