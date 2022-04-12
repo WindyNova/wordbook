@@ -12,12 +12,14 @@ import java.util.*;
 public interface WordMapper {
 
 
-    @Select({"select", "word, meaning", "from word_table"})
+    @Select({"select t.*\n" +
+            "          FROM wordbook.word_table t\n" +
+            "          LIMIT 501"})
     @Results({
             @Result(column = "word", property = "word", jdbcType = JdbcType.VARCHAR),
             @Result(column = "meaning", property = "meaning", jdbcType = JdbcType.VARCHAR)
     })
-    List<Word> queryAllWords();
+    List<Word> TestConnections();
 
 
     @Insert({"insert into word_table (word, meaning)", "values(#{word,jdbcType=VARCHAR}, #{meaning,jdbcType=VARCHAR})"})
@@ -30,9 +32,13 @@ public interface WordMapper {
     @Update("update word_table set meaning = #{meaning} where word = #{word}")
     int updateWord(String word, String meaning);
 
+
     @Select("select meaning from word_table where word = #{word}")
     String getMeaning(String word);
 
+    @Results(id = "wordResult", value = {
+            @Result(column = "word", property = "word", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "meaning", property = "meaning", jdbcType = JdbcType.VARCHAR)})
     @Select("select word,meaning from word_table where word = #{word}")
     Word getWordNMeaning(String word);
 

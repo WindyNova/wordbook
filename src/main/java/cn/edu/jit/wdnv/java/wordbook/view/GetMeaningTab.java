@@ -49,8 +49,9 @@ public class GetMeaningTab extends JPanel {
         if (result == null) {
             showWord.append("本单词簿中不存在您输出的单词\n");
         } else {
-            showWord.append(result + "\n");
-        }
+                showWord.append(result.getWord() + "  " + result.getMeaning() + "\n");
+            }
+
         if (showWord.getText().equals("您没有输入任何单词\n")) {
             showWord.setText(null);
         }

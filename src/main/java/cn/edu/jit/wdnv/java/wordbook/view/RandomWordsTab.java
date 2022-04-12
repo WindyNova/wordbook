@@ -1,7 +1,7 @@
 package cn.edu.jit.wdnv.java.wordbook.view;
 
+import cn.edu.jit.wdnv.java.wordbook.mapper.WordMapper;
 import cn.edu.jit.wdnv.java.wordbook.model.Word;
-import cn.edu.jit.wdnv.java.wordbook.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +16,7 @@ public class RandomWordsTab extends JPanel {
     final JTextArea showWord;       //显示查询结果
 
     @Autowired
-    private WordService wordService;
+    private WordMapper wordMapper;
 
     RandomWordsTab() {
         setLayout(new BorderLayout());
@@ -42,8 +42,10 @@ public class RandomWordsTab extends JPanel {
             return;
         }
         try {
-            List<Word> words = wordService.getRandomWord(Integer.parseInt(n));
-            showWord.setText(String.valueOf(words));
+            List<Word> words = wordMapper.getRandomWord(Integer.parseInt(n));
+            for (Word word : words) {
+                showWord.append(word.getWord() + "  " + word.getMeaning() + "\n");
+            }
         } catch (NumberFormatException e) {
             showWord.setText("请输入正整数");
         }
